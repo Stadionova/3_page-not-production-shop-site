@@ -1,0 +1,984 @@
+/* общие параметры */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.whole { /* контейнер для всего сайта */
+    width: 1348px; /* ширина всего сайта */
+    margin: 0 auto; /* центрирование всего сайта */
+}
+
+/* шапка */
+
+.header-flex { /* шапка с логотипом */
+    border: 1px solid #ececec;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.17);
+    padding-left: 227px; /* отодвинула шапку от левого края */
+    padding-right: 231px; /* отодвинула шапку от правого края */
+    padding-top: 25px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* убрала нижнее почёркивание у ссылки BRAND */
+}
+
+.logo-text_1 { /* часть текста логотипа BRAN */
+    color: #222222;
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 32px;
+    text-align: center;
+    padding-left: 12px; /* отодвинула brand от логотипа */
+}
+
+.logo-text_2 { /* часть текста логотипа D */
+    color: #f16d7f;
+    font-size: 27px;
+    font-weight: 900;
+    line-height: 32px;
+    text-align: center;
+}
+
+/* кнопка browse в шапке страницы */
+
+.form {
+    display: flex;
+    margin-left: 37px;
+}
+
+.browse { /* блок browse со стрелочкой выпадающего меню */
+    display: block;
+    padding-right: 26px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+    background: -moz-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+    background: -o-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+    background: -ms-linear-gradient(-90deg, #f9f9f9 0%, #f5f5f5 100%);
+    background: linear-gradient(180deg, #f9f9f9 0%, #f5f5f5 100%);
+    height: 40px;
+    line-height: 38px; /* чтобы вертикально центрировать и равно значению высоты - это высота шрифта */
+    color: #222222;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none; /* убрала нижнее подчёркивание */
+    border: 1px solid transparent; /* рамка изначально прозрачная и нужна, чтобы при наведении на кнопку рамка появлялась, но кнопка не прыгала */
+    transition: all 0.5s; /* замедление отображения рамки при наведении */
+    position: absolute;
+}
+
+.browse:hover { /* наведение на кнопку */
+    color: black; /* поменяла цвет текста */
+    border: 1px solid black; /* рамочка */
+    transition: all 0.4s; 
+}
+
+.arrow_1 { /* стрелочку поместила в кнопку browse в шапке страницы */
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: right;
+    position: relative;  
+    margin-left: 70px;
+    margin-top: 18px;
+}
+
+.input-header { /* поле ввода */
+    width: 317px;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    background-color:  #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 16px; /* из-за того что добавили падинги поле стало немного больше, поэтому дописываем bxbb+tab */
+    padding-right: 16px;
+    box-sizing: border-box;
+    line-height: 38px;
+    margin-left: 11px;
+}
+
+.search { /* значок лупы справа от поля Search for Item */
+    color: #a4a4a4;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: right;
+}
+
+.search_button {
+    width: 35px;
+    height: 41px;
+}
+
+.search_button:hover {
+    color: black; /* поменяла цвет текста */
+    border: 1px solid black; /* рамочка */
+    transition: all 1.0s; 
+}
+
+/* кнопка со стрелочкой my account */
+
+.header-right {
+    display: flex;
+    margin-top: 25px;
+}
+
+.busk {
+    margin-top: 3px;
+}
+
+.my-acc {
+    display: block;
+    padding-right: 19px;
+    padding-left: 19px;
+    background-color: #f16d7f;
+    height: 38px;
+    line-height: 38px; 
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    margin-left: 26px;
+    border: 1px solid transparent; 
+    transition: all 0.5s; 
+    margin-bottom: 20px;
+}
+
+.my-acc:hover { /* наведение на кнопку */
+    background-color: #fff; 
+    color: #f16d7f; 
+    border: 1px solid #f16d7f; 
+    transition: all 0.4s; 
+}
+
+.arrow_2 {
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: right;
+    position: relative; /* поместила стрелочку в блок */
+    margin-left: 20px;
+}
+
+/* блок меню */
+
+.navigation {
+    background-color: #ffffff;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none; /* убрала маркировку */
+    justify-content: center; /* разместили меню по центру */
+}
+
+.menu__link {
+    color: #222222;
+    font-size: 14px;
+    text-decoration: none; /* отключила подчёркивание */
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block; /* сделала ссылку блочной и задала падинги, чтобы кликабельно было не только слово, но и прилегающая область */
+    padding: 20px;
+}
+
+.menu__link:hover { /* наведение на меню */
+    color: #f16d7f; /* цвет меняется при наведении */
+    transition: all 0.4s; 
+}
+
+/* блок с девушкой на стуле */
+
+.whole_slider {
+    border: 1px solid #eaeaea;
+    background-color: #f7f7f7;
+    width: 1348px;
+}
+
+.slider { /* блок с девушкой на стуле */
+    width: 597px;
+    background-color: #e8e8e8;
+    height: 724px; 
+    margin: 0 auto;
+    display: flex; 
+    background-image: url(img/Layer%2042.jpg);
+    flex-direction: column;
+}
+
+.box-slider-text_2 { /* блок Home / Men / New Arrivals */
+    display: flex;
+}
+
+.box-slider-text_1 .slider_heading_1 { /* заголовок New Arrivals */
+    color: #f16d7f;
+    font-size: 24px;
+    font-weight: 900;
+    display: flex;
+    width: 150px;
+}
+
+.box-slider-text_2 .slider_heading_2 { /* хлебный крошки Home */
+    color: #636363;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+}
+
+.box-slider-text_2 .slider_heading_3 { /* хлебный крошки Men */
+    color: #636363;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+}
+
+.box-slider-text_2 .slider_heading_4 { /* хлебные крошки New Arrivals */
+    color: #f16d7f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+}
+
+.slider-text { /* блок с заголовком и хлебными крошками */
+    display: flex;
+    background-color: #f8f3f4;
+    width: 1348px;
+    height: 148px;
+    margin-bottom: 11px; /* отступ между заголовком и фоткой девушки */
+}
+
+.box-slider-text_1 { /* блок New Arrivals */
+    margin-top: 65px;
+    padding-left: 228px;
+}
+
+.box-slider-text_2 { /* блок Home / Men / New Arrivals */
+    padding-left: 500px; /* отодвинула от левого края */
+    margin-top: 65px;
+}
+
+.slider_heading_2:hover { /* наведение на меню */
+    color: #f16d7f; /* цвет меняется при наведении */
+    transition: all 0.5s; 
+}
+
+.slider_heading_3:hover { /* наведение на меню */
+    color: #f16d7f; /* цвет меняется при наведении */
+    transition: all 0.5s; 
+}
+
+.slider_heading_4:hover { /* наведение на меню */
+    color: #636363; /* цвет меняется при наведении */
+    transition: all 0.5s; 
+}
+
+/* заголовок над 4-мя маленькими фотками */
+
+.featured_text h2 {
+    color: #4d4d4d;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 20px;
+    text-align: center;
+    height: 23px;
+    margin-bottom: 72px;
+    margin-top: 119px;
+    text-transform: uppercase;
+}
+
+/* блок, где 4 маленьких картинки с ценой */
+
+.items {
+    width: 1141px;
+    margin: 0 auto;
+}
+
+.items-1 { /* первое фото слева направо в первом ряду */
+    background-image: url(img/Layer%2044.svg);
+    background-repeat: no-repeat;
+    background-color: #e9e9e9;
+    background-position: center;
+    width: 261px;
+    height: 280px;
+    float: left;
+    justify-content: space-between;
+    margin-right: 32px;
+}
+
+.items-2 { /* второе фото слева направо в первом ряду */
+    background-image: url(img/Layer%2045.svg);
+    background-repeat: no-repeat;
+    background-color: #e9e9e9;
+    background-position: center;
+    width: 261px;
+    height: 280px;
+    float: left;
+    justify-content: space-between;
+    margin-right: 32px;
+}
+
+.items-3 { /* третье фото слева направо в первом ряду */
+    background-image: url(img/Layer%2046.svg);
+    background-repeat: no-repeat;
+    background-color: #e9e9e9;
+    background-position: center;
+    width: 261px;
+    height: 280px;
+    float: left;
+    justify-content: space-between;
+    margin-right: 32px;
+}
+
+.items-4 { /* четвёртое фото слева направо в первом ряду */
+    background-image: url(img/Layer%2047.jpg);
+    background-color: #e9e9e9;
+    width: 257px;
+    height: 280px;
+    float: right;
+}
+
+.items-1:hover { /* добавила фотке тень, но не могу добавить тень всему блоку */
+    box-shadow: 0 5px 8px rgba (0, 0, 0, 0.16);
+    filter: brightness(50%);
+    transition: all 0.5s; 
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.16);
+    transition: all 0.5s; 
+}
+
+.items-2:hover {
+    box-shadow: 0 5px 8px rgba (0, 0, 0, 0.16);
+    filter: brightness(50%);
+    transition: all 0.5s; 
+}
+
+.items-3:hover {
+    box-shadow: 0 5px 8px rgba (0, 0, 0, 0.16);
+    filter: brightness(50%);
+    transition: all 0.5s; 
+}
+
+.items-4:hover {
+    box-shadow: 0 5px 8px rgba (0, 0, 0, 0.16);
+    filter: brightness(50%);
+    transition: all 0.5s; 
+}
+
+.items-1:hover .add-flex {
+    display: flex; /* теперь блок Add to Cart появляется только при наведении */
+    transition: all 0.5s; 
+}
+
+.items-2:hover .add-flex {
+    display: flex; 
+    transition: all 0.5s; 
+}
+
+.items-3:hover .add-flex {
+    display: flex; 
+    transition: all 0.5s; 
+}
+
+.items-4:hover .add-flex {
+    display: flex; 
+    transition: all 0.5s; 
+}
+
+.items a { /* убрала подчёркивание ссылок */
+    text-decoration:none;
+}
+
+.items p:first-of-type { /* чёрный цвет текста под маленькими картинками */
+    color: #222222;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    padding-top: 290px;
+}
+
+.items p:nth-child(2) { /* розовый цвет цены под маленькими картинками */
+    color: #f16d7f;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    margin-top: 19px;
+}
+
+.items-4 {
+    background-color: #e9e9e9;
+    width: 257px;
+    height: 280px;
+    float: right;
+}
+
+/* блок с корзинкой в каждой из 8 фоток при наведении */
+
+.add-flex { /* блок в фотке с текстом Add to Cart и корзинкой */
+    display: none; /* спрятали блок с Add to Cart за фотографию, чтобы добавить затемнение */
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0);
+    width: 123px;
+    height: 39px;
+    position: relative;
+    margin-left: 65px;
+    margin-top: 90px;
+    float: left;
+    line-height: 39px; /* текст по центру блока */
+    text-decoration: none;
+}
+
+.add-flex:hover { /* цвет блока с корзинкой меняется при наведении */
+    background-color: rgba(255, 255, 255, 0); /* прозрачный фон */
+    border: #fff; /* цвет текста сделала розовым */
+    transition: all 0.5s; 
+}
+
+.add-flex:hover { /* цвет блока с корзинкой меняется при наведении */
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    transition: all 0.5s; 
+}
+
+.add-flex img { /* корзинка в блоке */
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 20px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.add-to-cart { /* текст Add to Cart в блоке с корзинкой */
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    padding-left: 10px;
+    color: white;
+}
+
+/* основной блок */
+
+.COLLECTION {
+    width: 1141px;
+    height: 730px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.header-text p { /* заголовок WOMEN COLLECTION */
+    color: #f16d7f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 34px;
+    margin-top: 73px;
+}
+
+.header-text h2 {
+    color: #4d4d4d;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 67px;
+}
+
+.text-block {
+    float: right;
+}
+
+.text-block p:first-of-type {
+    color: #5e5e5e;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 28px;
+    margin-left: 262px;
+    margin-right: 261px;
+}
+
+.text-block p:nth-child(2) { /* текст MATERIAL серого цвета */
+    color: #b9b9b9;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    position: absolute;
+    margin-left: 404px;
+}
+
+.text-block p:nth-child(3) { /* текст COTTON чёрного цвета */
+    color: #2f2f2f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    float: right;
+    position: relative;
+    margin-right: 600px;
+}
+
+.text-block p:nth-child(4) { /* текст DESIGNER серого цвета */
+    color: #b9b9b9;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin-left: 620px;
+    position: absolute; /* чтобы сдвигать */
+}
+
+.text-block p:nth-child(5) { /* текст BINBURHAN чёрного цвета */
+    color: #2f2f2f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    margin-left: 694px;
+    position: relative; /* чтобы сдвигать */
+}
+
+.text-block h2 { /* цена $561 */
+    color: #ef5b70;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 37px;
+}
+
+.CHOOSE {
+    display: flex;
+    margin: 0 auto;
+    margin-left: 150px;
+}
+
+.CHOOSE_COLOR-flex {
+    margin-top: 333px;
+}
+
+.CHOOSE_COLOR-flex p {
+    color: #2f2f2f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    margin-left: 190px;
+}
+
+.CHOOSE_COLOR-flex .input-header {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 144px;
+    height: 35px;
+    margin-left: 190px;
+    position: absolute;
+}
+
+.CHOOSE_SIZE-flex {
+    margin-top: 333px;
+}
+
+.CHOOSE_SIZE-flex p {
+    color: #2f2f2f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    margin-left: 53px;
+}
+
+.CHOOSE_SIZE-flex .input-header {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 144px;
+    height: 35px;
+    margin-left: 53px;
+    position: absolute;
+}
+
+.QUANTITY-flex {
+    margin-top: 333px;
+}
+
+.QUANTITY-flex p {
+    color: #2f2f2f;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    margin-left: 53px;
+}
+
+.QUANTITY-flex .input-header {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    width: 144px;
+    height: 35px;
+    margin-left: 53px;
+}
+
+.CHOOSE_COLOR-flex .arrow_1 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    position: relative; /* поместила стрелочку внутрь блока */
+    margin-left: 300px;
+}
+
+.CHOOSE_SIZE-flex .arrow_1 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    position: relative; /* поместила стрелочку внутрь блока */
+    margin-left: 160px;
+}
+
+
+/* левая часть блока с пляжем перед футером */
+
+.subscribe { /* блок с фоткой пляжа на фоне */
+    height: 438px;
+    background-image: url(img/beach.jpg);
+    margin-top: 508px; /* отступ между блоком с девушкой на стуле и пляжем */
+    width: 1348px;
+    position: absolute;
+}
+
+.subscribe_left { /* отодвинула фото девушки от границ фоновой фотографии */
+    padding-top: 111px;
+    padding-left: 140px;
+}
+
+.sub_1 { /* цитата справа от круглой фотки девушки */
+    color: rgba(34, 34, 36, 0.67);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 26px;
+    text-align: left;
+    margin-right: 720px;
+    margin-top: 12px;
+    width: 386px;
+    float: right;
+}
+
+.sub_2 {
+    color:  #f16d7f;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    width: 82px;
+    margin-left: 100px;
+}
+
+.sub_3 {
+    color:  #222224;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 14px;
+    text-align: left;
+    width: 82px;
+    margin-left: 100px;
+}
+
+/* правая часть блока с пляжем */
+
+.whole_subscribe { /* блок с пляжем и всем содержимым, если писать position то блок не по центру, а съезжает влево */
+    margin: 0 auto;
+    align-items: center;
+    width: 1348px;
+}
+
+.sub_block { /* блок Subscribe FOR OUR NEWLETTER AND PROMOTION */
+    position: relative;
+    float: right;
+    margin-top: 340px;
+    margin-right: 200px;
+}
+
+.subscribe_text h2 { /* заголовок над полем email в футере */
+    color: rgba(34, 34, 36, 0.67);
+    font-size: 24px;
+    line-height: 54px;
+    font-weight: 400;
+    margin-left: 400px;
+}
+   
+.subscribe_text p { /* заголовок над полем email в футере */
+    color: rgba(34, 34, 36, 0.67);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-left: 330px;
+}
+
+.sub_block input { /* блок справа для ввода почтового ящика и кнопка subscribe */
+    display: flex;
+    width: 300px;
+    margin-left: 250px;
+}
+
+.sub_block a {
+    margin-left: 550px;
+}
+
+.subscribe_but { /* кнопка subscribe на розовом фоне */
+    background-color: #f16d7f;
+    width: 104px;
+    display: block;
+    padding-right: 20px;
+    padding-left: 21px;
+    box-sizing: border-box;
+    line-height: 46px; /* чтобы вертикально центрировать равно значению высоты шрифта */
+    color: #222222;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none; /* убрала нижнее подчёркивание */
+    border: 1px solid transparent; /* рамка изначально прозрачная, рамка нужна, чтобы при наведении на кнопку рамка появлялась, но кнопка не прыгала */
+    transition: all 0.5s; /* замедление отображения рамки при наведении */
+    position: relative; /* поместила кнопку subscribe справа от поля email */
+    margin-top: 20px; /* опустила кнопку subscribe на один уровень с кнопкой email */
+    border-top-right-radius: 23px; /* делим значение height пополам и получается кнопка скруглённая справа сверху */
+    border-bottom-right-radius: 23px; /* делим значение height пополам и получается кнопка скруглённая справа снизу */
+}
+
+.subscribe_but:hover { /* наведение на кнопку подписки */
+    background-color: #f16d7f; 
+    color: #fff; 
+    border: 1px solid #222222; 
+    border-top-right-radius: 23px; /* делим значение height пополам и получается кнопка скруглённая слева сверху */
+    border-bottom-right-radius: 23px; /* делим значение height пополам и получается кнопка скруглённая слева снизу */
+    transition: all 0.5s; 
+}
+
+.input-footer { /* поле ввода почтового ящика */
+    background-color: #e1e1e1;
+    height: 48px;
+    border: 1px solid #e6e6e6;
+    font-size: 14px;
+    padding-left: 16px; 
+    padding-right: 16px;
+    box-sizing: border-box;
+    position: absolute; /* поместила кнопку subscribe справа от поля email */
+    border-top-left-radius: 23px; /* делим значение height пополам и получается кнопка скруглённая слева сверху */
+    border-bottom-left-radius: 23px; /* делим значение height пополам и получается кнопка скруглённая слева снизу */
+    outline: none; /* поле email не подсвечивается при нажатии */
+}
+
+/* блок в футере с логотипом и описанием */
+
+.whole_footer {
+    margin: 0 auto;
+    align-items: center;
+    width: 1140px;
+    padding-bottom: 500px;
+    padding-top: 300px; /* отступ между пляжем и футером */
+}
+
+.box_1 p { /* текст в футере под логотипом */
+    color: #898989;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    width: 427px;
+    margin-top: 20px; /* отодвинула блок в футере с текстом от логотипа */
+}
+
+/* блок в футере со ссылками в 3 столбца */
+
+.footer {
+    margin-top: 750px;
+}
+
+.footer-block_1 {
+    position: absolute;
+}
+
+.footer-block_2, .footer-block_3, .footer-block_4 {
+    position: relative;
+}
+
+.box_2 {
+    float: left;
+    margin-left: 450px; /* отодвинула ссылки company от левого края */
+}
+
+.box_2 h2 {
+    margin-left: 14px; /* заголовок COMPANY расположила ровно над списком со ссылками */
+}
+
+.box_3 {
+    float: left;
+    margin-left: 700px; /* отодвинула ссылки INFORMATION от левого края */
+    position: absolute;
+}
+
+.box_3 h2 {
+    margin-left: 18px; /* заголовок INFORMATION расположила ровно над списком со ссылками */
+}
+
+.box_4 {
+    float: right;
+}
+
+.box_4 h2 {
+    display: inline; /* заголовок SHOP CATEGORY расположила в строку */
+}
+
+.box_2 ul li {
+    list-style-type: none; /* убрала маркеры в списке company */
+}
+
+.box_3 ul li {
+    list-style-type: none; 
+}
+
+.box_4 ul li {
+    list-style-type: none; 
+}
+
+.link_footer {
+    color: #222222;
+    font-size: 14px;
+    text-decoration: none; /* отключили подчёркивание */
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block; 
+    padding: 20px;
+}
+
+.link_footer:hover { /* наведение на меню */
+    color: #f16d7f;
+    transition: all 0.3s;
+}
+
+.box_2 h2 {
+    width: 94px;
+    color: #f16d7f;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: right;
+}
+
+.box_3 h2 {
+    width: 131px;
+    color: #f16d7f;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: right;
+}
+
+.box_4 h2 {
+    width: 154px;
+    color: #f16d7f;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: right;
+}
+
+/* футер с копирайтом */
+
+.footer_rights {
+    width: 1348px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #e6e6e6;
+    height: 79px;
+    line-height: 79px; /* делает содержимое в блоке по центру блока и равно высоте */
+    display: flex; /* делает содержимое в блоке по центру блока и равно высоте */
+}
+
+.footer_text {
+    position: absolute;
+}
+
+.button_link {
+    background-color: #ffffff;
+    width: 32px;
+    height: 32px;
+}
+
+.links { /* иконки соц сетей */
+    padding-left: 1100px;
+    position: relative;
+    display: flex;
+}
+
+.links .button_link:nth-child(2) {
+    background-color: #f16d7f;
+}
+
+.links .button_link:nth-child(2):hover { /* перекрасила кнопки при наведении */
+    background-color: #f16d7f; 
+    border: 1px solid #fff; 
+    transition: all 0.6s;
+}
+
+.footer_text p { /* текст в левом нижнем углу страницы all rights reserved */
+    color: #7a7a7a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-left: 90px;
+}
+
+.button_link:hover { /* перекрасила кнопки при наведении */
+    background-color: #f16d7f; 
+    border: 1px solid #fff; 
+    transition: all 0.3s;
+}
